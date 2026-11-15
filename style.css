@@ -1,0 +1,334 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 30px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F1F5F9;
+    color: #475569;
+    line-height: 1.5;
+}
+
+
+h1 {
+    text-align: center;
+    color: #0F172A;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+h2 {
+    color: #1E293B;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+
+    align-items: start;
+}
+
+.student-form,
+.search-student {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    min-width: 0;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.06);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.student-form input,
+.student-form select,
+.search-student input {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+
+    padding: 10px 12px;
+
+    background-color: #FFFFFF;
+    color: #0F172A;
+
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.student-form input:hover,
+.student-form select:hover,
+.search-student input:hover {
+    border-color: #94A3B8;
+}
+
+.student-form input:focus,
+.student-form select:focus,
+.search-student input:focus {
+    outline: none;
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+input::placeholder {
+    color: #94A3B8;
+}
+
+.add-btn,
+.search-btn,
+#cancel-btn,
+.edit-btn,
+.delete-btn {
+    min-height: 40px;
+    padding: 10px 16px;
+
+    border-radius: 8px;
+    border: 1px solid transparent;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+button:focus-visible {
+    outline: 3px solid #93C5FD;
+    outline-offset: 3px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* =====================================
+   8. ADD STUDENT BUTTON
+===================================== */
+
+.add-btn {
+    width: 100%;
+    background-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.add-btn:hover {
+    background-color: #1D4ED8;
+    box-shadow: 0 3px 8px rgba(37, 99, 235, 0.2);
+}
+
+#cancel-btn {
+    width: 100%;
+    background-color: #EFF6FF;
+    color: #1D4ED8;
+    border-color: #BFDBFE;
+}
+
+#cancel-btn:hover {
+    background-color: #DBEAFE;
+}
+
+#cancel-btn[hidden] {
+    display: none;
+}
+
+.search-bar {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#search-rno {
+    flex: 1 1 180px;
+}
+
+.search-btn {
+    background-color: #2563EB;
+    color: #FFFFFF;
+}
+
+.search-btn:hover {
+    background-color: #1D4ED8;
+}
+
+#student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    min-width: 0;
+}
+
+#student-list > p {
+    padding: 20px;
+    text-align: center;
+    color: #64748B;
+    background-color: #F8FAFC;
+    border: 1px dashed #CBD5E1;
+    border-radius: 10px;
+}
+
+.student-card {
+    background-color: #F8FAFC;
+
+    border: 1px solid #E2E8F0;
+    border-left: 4px solid #2563EB;
+    border-radius: 10px;
+
+    padding: 18px 20px;
+
+    overflow-wrap: anywhere;
+
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+
+    transition:
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.student-card:hover {
+    box-shadow: 0 5px 15px rgba(15, 23, 42, 0.08);
+    border-color: #BFDBFE;
+    border-left-color: #2563EB;
+}
+
+.student-card p {
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.student-card p:last-of-type {
+    margin-bottom: 12px;
+}
+
+.edit-btn {
+    background-color: #EFF6FF;
+    color: #1D4ED8;
+
+    border-color: #BFDBFE;
+
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.edit-btn:hover {
+    background-color: #DBEAFE;
+}
+
+.delete-btn {
+    background-color: #DC2626;
+    color: #FFFFFF;
+
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.delete-btn:hover {
+    background-color: #B91C1C;
+    box-shadow: 0 3px 8px rgba(220, 38, 38, 0.15);
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .student-form,
+    .search-student {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    h1 {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: 0;
+        gap: 18px;
+    }
+
+    .student-form,
+    .search-student {
+        padding: 18px;
+        border-radius: 10px;
+    }
+
+    .student-card {
+        padding: 15px;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    #search-rno,
+    .search-btn {
+        width: 100%;
+    }
+
+    #search-rno {
+        flex: 0 0 auto;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        margin-top: 8px;
+    }
+}

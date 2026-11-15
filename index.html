@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student management system</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <div class="container">
+        <form id="student-form" class="student-form">
+            <h2>Student Form</h2>
+            <div class="form-group">
+                <label for="stname" >Student Name: </label>
+                <input type="text" id="stname" required>
+            </div>
+            <div class="form-group">
+                <label for="rno" >Roll Number: </label>
+                <input type="text" id="rno" required>
+            </div>
+            <div class="form-group">
+                <label for="course" >Course: </label>
+                <select id="course" required>
+                    <option value="" disabled selected>Select course</option>
+                    <option value="CSE">CSE</option>
+                    <option value="Mech">Mech</option>
+                    <option value="Civil">Civil</option>
+                    <option value="IT">IT</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                </select>
+            </div>
+            <div class="btns">
+                <button type="submit" class="add-btn" id="add-btn">Add Student</button>
+                <button type="button" id="cancel-btn" hidden>Cancel Edit</button>
+            </div>  
+        </form>
+
+        <div class="search-student" id="search-student">
+            <h2>Student List</h2>
+            <div class="search-bar">
+                <input type="text" id="search-rno" placeholder="Enter student Roll no:">
+                <button class="search-btn" id="search-btn"> Search </button>
+            </div>
+            <div id="student-list">
+                <!-- List of students will appear here -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
