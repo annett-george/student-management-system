@@ -4,6 +4,9 @@
 A responsive Student Management System built using
 HTML, CSS, and JavaScript.
 
+## Live Demo 
+https://annett-george.github.io/student-management-system/
+
 ## Features
 
 - Add new students
